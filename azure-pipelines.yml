@@ -33,3 +33,11 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(db88e2af-9e41-4372-8254-e771e951a93c)'
+    appType: 'webApp'
+    appName: 'FuzzyWebApp'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
