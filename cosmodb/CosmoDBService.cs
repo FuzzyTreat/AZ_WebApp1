@@ -66,7 +66,7 @@ namespace AZ_WebApp1.cosmodb
             this._cosmosClient = new CosmosClient(_endpointUri, _primaryKey, new CosmosClientOptions() { ApplicationName = "AZ_WebApp1" });
 
             // Get or Create a new database
-            this._database = await this._cosmosClient.CreateDatabaseIfNotExistsAsync(_databaseId);
+            this._database = this._cosmosClient.GetDatabase(_databaseId); //await this._cosmosClient.CreateDatabaseIfNotExistsAsync(_databaseId);
             this._container = this._database.GetContainer(_containerId);
         }
 
