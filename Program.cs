@@ -1,11 +1,13 @@
 using AZ_WebApp1.cosmodb;
+using AZ_WebApp1.UtilityService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddSingleton<ICosmoDBService, CosmoDBService>();
+//builder.Services.AddSingleton<ICosmoDBService, CosmoDBService>();
+builder.Services.AddSingleton<ICipherClient, CipherClient>();
 
 var app = builder.Build();
 

@@ -19,7 +19,7 @@ namespace AZ_WebApp1.cosmodb
         public int TotalSoldScu { get; set; }
         public int TotalBoughtScu { get; set; }
 
-        public TradeItem[] Cargo { get; set; }
+        public TradeItem[]? Cargo { get; set; }
 
         public TradeRun(ICosmoDBService cosmoDBService)
         {
@@ -28,11 +28,14 @@ namespace AZ_WebApp1.cosmodb
 
         public void UpdateSummary()
         {
-            TotalSoldScu = Cargo.Sum(r => r.ScuSold);
-            TotalSoldValue = Cargo.Sum(r => r.ScuSold * r.SalesPrice);
+            if (Cargo != null)
+            {
+                TotalSoldScu = Cargo.Sum(r => r.ScuSold);
+                TotalSoldValue = Cargo.Sum(r => r.ScuSold * r.SalesPrice);
 
-            TotalBoughtValue = Cargo.Sum(r => r.ScuBought * r.PurchasePrice);
-            TotalBoughtScu = Cargo.Sum(r => r.ScuBought);
+                TotalBoughtValue = Cargo.Sum(r => r.ScuBought * r.PurchasePrice);
+                TotalBoughtScu = Cargo.Sum(r => r.ScuBought);
+            }
         }
 
         public async Task FillTradeRun(string userid)

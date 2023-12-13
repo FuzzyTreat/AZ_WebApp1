@@ -4,8 +4,51 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>This is a new paragraph!!!</p>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form id="cipherForm" method="post">
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>This is a new paragraph!!!</p>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <div>
+            <div>
+                <span>Text</span>
+                <input id="TextValue" asp-for="DataPackage.Text" />
+            </div>
+            <div>
+                <span>Key</span>
+                <input id="KeyValue" asp-for="DataPackage.KeyValue" />
+            </div>
+            <div>
+                <span>Encode / Decode</span>
+                <input id="ActionType" asp-for="DataPackage.ActionType" />
+            </div>
+            <div>
+                <input type="submit" id="btnSubmit" value="Process" />
+            </div>
+        </div>
+        <div>
+            &nbsp
+            <input type="text" class="form-control" name="ResponseText" value="@ViewData["ResponseText"]" />
+        </div>
+    </div>
+</form>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //     alert(jsonData);
+
+            //     $.ajax({
+            //         type: "POST",
+            //         dataType: "json",
+            //         data: jsonData,
+            //         url: "http://localhost:7253/api/Function1",
+            //         success: function (data) {
+            //             alert(data);
+            //         }
+            //     });
+            // });
+        });
+    </script>
+}
