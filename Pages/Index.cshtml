@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "Home page";
 }
+@inject IConfiguration Configuration
+
+
 
 <form id="cipherForm" method="post">
     <div class="text-center">
@@ -19,8 +22,20 @@
                 <input id="KeyValue" asp-for="DataPackage.KeyValue" />
             </div>
             <div>
-                <span>Encode / Decode</span>
-                <input id="ActionType" asp-for="DataPackage.ActionType" />
+@*                 <span>Encode / Decode</span> *@
+                @* <input id="ActionType" asp-for="DataPackage.ActionType" /> *@
+                <div class="form-group row">
+                    <div class="col">
+                        Encode
+                        <input type="radio" value="E" alt="Encode" title="Encode" asp-for="DataPackage.ActionType">
+                        @* <br /> *@
+                    </div>
+                    <div class="col">
+                        Decode
+                        <input type="radio" value="D" alt="Decode" title="Decode" asp-for="DataPackage.ActionType">
+                        <br />
+                    </div>
+                </div>
             </div>
             <div>
                 <input type="submit" id="btnSubmit" value="Process" />

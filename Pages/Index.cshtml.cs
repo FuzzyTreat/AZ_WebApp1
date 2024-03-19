@@ -11,8 +11,11 @@ namespace AZ_WebApp1.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        ICosmoDBService _cosmoDBService;
-        ICipherClient _cipherClient;
+        
+        private ICosmoDBService _cosmoDBService;
+        private ICipherClient _cipherClient;
+
+        private string _endPointUri;
 
         public DataPackage DataPackage { get; set; }
         public string ResponseText { get; set; }
@@ -28,6 +31,7 @@ namespace AZ_WebApp1.Pages
             _logger = logger;
             _cosmoDBService = null;
             _cipherClient = cipherClient;
+
             DataPackage = new DataPackage();
             ResponseText = string.Empty;
         }

@@ -14,7 +14,7 @@ namespace AZ_WebApp1.UtilityService
     public class CipherClient : IDisposable, ICipherClient
     {
         private readonly string _functionUri = "https://simplecipherfunction.azurewebsites.net/api/Function1?code=lrhqI-OEaPlO_IBHcxuCF5TZB-mQ5wZek98N9ixrg5ByAzFumRpSXA==";
-        // private readonly string _functionUri = "http://localhost:7253/api/Function1";
+        //private readonly string _functionUri = "http://localhost:7253/api/Function1";
         private HttpClient _functionClient;
         private bool disposedValue;
 
