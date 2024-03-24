@@ -44,7 +44,7 @@ namespace AZ_WebApp1.UtilityService
                 {
                     // TODO: dispose managed state (managed objects)
 
-                    if (_functionClient != null)
+					if (_functionClient != null)
                     {
                         _functionClient.Dispose();
                     }

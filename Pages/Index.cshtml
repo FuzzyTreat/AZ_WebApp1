@@ -21,6 +21,7 @@
                 <span>Key</span>
                 <input id="KeyValue" asp-for="DataPackage.KeyValue" />
             </div>
+            <br />
             <div>
 @*                 <span>Encode / Decode</span> *@
                 @* <input id="ActionType" asp-for="DataPackage.ActionType" /> *@
@@ -28,11 +29,12 @@
                     <div class="col">
                         Encode
                         <input type="radio" value="E" alt="Encode" title="Encode" asp-for="DataPackage.ActionType">
-                        @* <br /> *@
-                    </div>
-                    <div class="col">
+                        <br />
+@*                     </div>
+                    <div class="col"> *@
                         Decode
                         <input type="radio" value="D" alt="Decode" title="Decode" asp-for="DataPackage.ActionType">
+                        <br />
                         <br />
                     </div>
                 </div>
